@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+class Soldier {
+public:
+    int soldierNo;
+    int noOfWeapons;
+
+    void getData() {
+        cout << "Enter soldier number: ";
+        cin >> soldierNo;
+        cout << "Enter number of weapons: ";
+        cin >> noOfWeapons;
+    }
+
+    void checkLuck() {
+        if (noOfWeapons % 2 == 0) {
+            cout << "Soldier " << soldierNo << " is unlucky." << endl;
+        } else {
+            cout << "Soldier " << soldierNo << " is lucky." << endl;
+        }
+    }
+};
+
+int main() {
+    Soldier soldiers[4];
+
+    for (int i = 0; i < 4; i++) {
+        cout << "\nEnter details for soldier " << i + 1 << ":" << endl;
+        soldiers[i].getData();
+    }
+
+    cout << "\nSoldier Luck Status:" << endl;
+    for (int i = 0; i < 4; i++) {
+        soldiers[i].checkLuck();
+    }
+};
